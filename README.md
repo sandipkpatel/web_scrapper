@@ -46,6 +46,14 @@ Initia Scraping Process
 http://localhost:8082/run
 ```
 
+Create folder in root direcotry
+-------
+
+```bash
+/output
+```
+
+
 All unit info will be stored in output folder.
 -------
 
