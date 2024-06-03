@@ -1,0 +1,1 @@
+{"id":"18354766","flatFloor":"13 /  14","totalFloors":"13 /  14","bedrooms":"2","rooms":"4","area":"82.26 m²","priceUSD":"433,210","address":"კოსტავას ქ. "}

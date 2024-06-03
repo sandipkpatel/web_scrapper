@@ -1,0 +1,1 @@
+{"id":"18456027","flatFloor":"3 /  8","totalFloors":"3 /  8","bedrooms":"1","rooms":"2","area":"76.7 m²","priceUSD":"282,285","description":"საბურთალო ვ დოლიხე120ა\nმესაკუთრე.","address":"დოლიძე ვ. ქ. "}

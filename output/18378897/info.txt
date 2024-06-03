@@ -1,0 +1,1 @@
+{"id":"18378897","flatFloor":"2 /  11","totalFloors":"2 /  11","bedrooms":"1","rooms":"2","area":"76.4 m²","priceUSD":"461,159","address":"ქავთარაძის ქ. "}

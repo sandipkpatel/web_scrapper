@@ -1,0 +1,1 @@
+{"id":"18104117","flatFloor":"8 /  9","totalFloors":"8 /  9","bedrooms":"3","rooms":"5","area":"170 m²","priceUSD":"600,904","address":"ბახტრიონის ქ. "}
