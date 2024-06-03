@@ -45,3 +45,10 @@ Initia Scraping Process
 ```bash
 http://localhost:8082/run
 ```
+
+All unit info will be stored in output folder.
+-------
+
+```bash
+/output/unit_id/
+```
