@@ -1,1 +1,0 @@
-{"id":"18380743","flatFloor":"18 /  18","totalFloors":"18 /  18","bedrooms":"2","rooms":"3","area":"64 m²","priceUSD":"371,722","address":"მინდელის ქუჩა "}

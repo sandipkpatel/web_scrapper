@@ -1,1 +1,0 @@
-{"id":"18379018","flatFloor":"1 /  9","totalFloors":"1 /  9","bedrooms":"2","rooms":"4","area":"97 m²","priceUSD":"405,261","address":"დოლიძე ვ. ქ. "}

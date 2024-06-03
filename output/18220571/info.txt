@@ -1,1 +1,0 @@
-{"id":"18220571","flatFloor":"9 /  10","totalFloors":"9 /  10","bedrooms":"1","rooms":"2","area":"54.5 m²","priceUSD":"313,029","address":"მარშალი გელოვანი გამზირი "}

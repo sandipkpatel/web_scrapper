@@ -1,1 +1,0 @@
-{"id":"17928467","flatFloor":"7 /  7","totalFloors":"7 /  7","bedrooms":"1","rooms":"2","area":"43 m²","priceUSD":"231,977","address":"ა. პოლიტკოვსკაიას ქუჩა (ჯიქია) "}
