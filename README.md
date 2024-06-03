@@ -32,6 +32,13 @@ Add website url, startPage, endPage in input.json file
 ]
 ```
 
+Create folder in root direcotry
+-------
+
+```bash
+/output
+```
+
 Run Backend Service
 -------
 
@@ -46,12 +53,7 @@ Initia Scraping Process
 http://localhost:8082/run
 ```
 
-Create folder in root direcotry
--------
 
-```bash
-/output
-```
 
 
 All unit info will be stored in output folder.
