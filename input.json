@@ -2,11 +2,13 @@
     {
         "url": "https://www.myhome.ge/en/s/iyideba-bina-Tbilisshi/?deal_types=1&real_estate_types=1&cities=1&currency_id=1&CardView=2&urbans=47&districts=4&page=1",
         "startPage": 1,
-        "endPage": 1
+        "endPage": 1,
+        "currency": "USD"
     },
     {
         "url": "https://www.myhome.ge/en/s/iyideba-bina-Tbilisshi/?deal_types=1&real_estate_types=1&cities=1&currency_id=1&CardView=2&urbans=47&districts=4&page=1",
         "startPage": 3,
-        "endPage": 5
+        "endPage": 5,
+        "currency": "GEL"
     }
 ]

@@ -12,11 +12,29 @@ async function scrapeWebsite(input) {
     //open browser
     const browser = await puppeteer.launch({ headless: true, isLandscape: true, executablePath: process.env.EXE_PATH });
     const page = await browser.newPage();
+    await page.setViewport({width: 1300, height: 800});
     await page.goto(input.url, { timeout: 240000 });
 
     //SPA page, wait for element to load on page
     try {
         await page.waitForSelector('a[rel="next"]', { visible: true });
+    } catch (e) {
+        console.log(e)
+    }
+
+    //change currency
+    try {
+        const currency = await page.$('#headlessui-popover-button-\\:R2l53om\\:');
+        await currency.click();
+        await delay(2000)
+        if(input.currency.toLowerCase() == "usd"){
+            const usd = await page.$('label[for="currency-gel"]');
+            await usd.click();
+        }else if(input.currency.toLowerCase() == "gel"){
+            const gel = await page.$('label[for="currency-usd"]');
+            await gel.click();
+        }
+        await delay(2000)
     } catch (e) {
         console.log(e)
     }
@@ -81,11 +99,11 @@ async function scrapeWebsite(input) {
             console.log(allImages)
 
             //get other info
-            let id, flatFloor, totalFloors, bedrooms, rooms, area, priceUSD, description, address = ""
+            let id, flatFloor, totalFloors, bedrooms, rooms, area, price, description, address = ""
             try {
                 id = await newPage.$eval('#__next > div.pt-6.md\\:pt-8.pb-8.md\\:pb-12.bg-white.md\\:bg-\\[rgb\\(251\\,251\\,251\\)\\] > div > div.grid.grid-cols-12.items-start.gap-5.mt-3 > div.col-span-12.lg\\:col-span-9 > div.px-4.md\\:px-6.lg\\:px-0 > div.mt-5.md\\:border.md\\:border-gray-20.rounded-2xl.px-0.md\\:px-6.pt-0.md\\:pt-5.pb-4.md\\:pb-6.bg-white > div.flex.justify-between.items-center.flex-wrap.lg\\:flex-nowrap > div > span:nth-child(3)', el => el.textContent);
                 area = await newPage.$eval('#__next > div.pt-6.md\\:pt-8.pb-8.md\\:pb-12.bg-white.md\\:bg-\\[rgb\\(251\\,251\\,251\\)\\] > div > div.grid.grid-cols-12.items-start.gap-5.mt-3 > div.col-span-12.lg\\:col-span-9 > div.px-4.md\\:px-6.lg\\:px-0 > div.mt-5.md\\:border.md\\:border-gray-20.rounded-2xl.px-0.md\\:px-6.pt-0.md\\:pt-5.pb-4.md\\:pb-6.bg-white > div.hidden.md\\:block > div > div:nth-child(1) > div > span.mt-0\\.5.text-sm', el => el.textContent);
-                priceUSD = await newPage.$eval('#__next > div.pt-6.md\\:pt-8.pb-8.md\\:pb-12.bg-white.md\\:bg-\\[rgb\\(251\\,251\\,251\\)\\] > div > div.grid.grid-cols-12.items-start.gap-5.mt-3 > div.col-span-3.hidden.lg\\:block.sticky > div > div.rounded-2xl.md\\:border.md\\:border-gray-20.p-0.md\\:p-5.bg-white > div.flex.items-center.justify-start.md\\:justify-between > div.flex.text-2xl.md\\:text-26.font-tbcx-bold.mt-\\[-5px\\].md\\:mt-0.mr-3.md\\:mr-0 > span:nth-child(1)', el => el.textContent);
+                price = await newPage.$eval('#__next > div.pt-6.md\\:pt-8.pb-8.md\\:pb-12.bg-white.md\\:bg-\\[rgb\\(251\\,251\\,251\\)\\] > div > div.grid.grid-cols-12.items-start.gap-5.mt-3 > div.col-span-3.hidden.lg\\:block.sticky > div > div.rounded-2xl.md\\:border.md\\:border-gray-20.p-0.md\\:p-5.bg-white > div.flex.items-center.justify-start.md\\:justify-between > div.flex.text-2xl.md\\:text-26.font-tbcx-bold.mt-\\[-5px\\].md\\:mt-0.mr-3.md\\:mr-0 > span:nth-child(1)', el => el.textContent);
                 description = await newPage.$eval('#text-container > div', el => el.textContent);
 
             } catch (e) {
@@ -124,7 +142,7 @@ async function scrapeWebsite(input) {
 
             id = id?.replace("ID: ", "")
             const unitData = {
-                id, flatFloor, totalFloors, bedrooms, rooms, area, priceUSD, description, address
+                id, flatFloor, totalFloors, bedrooms, rooms, area, price, description, address
             }
 
             console.log(unitData)
